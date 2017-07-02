@@ -19,8 +19,6 @@
 			}, 100);
 		});
 
-		$('form').placeholder();
-
 		skel.on('+medium -medium', function() {
 			$.prioritize(
 				'.important\\28 medium\\29',
