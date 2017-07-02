@@ -35,14 +35,14 @@ gulp.task('sass:watch', function () {
 
 gulp.task('concat-styles', ['sass', 'static-files'], () => {
   return gulp.src([
-    config.dir.src + '/assets/css/font-awesome.min.css',
+    config.dir.lib + '/font-awesome/css/font-awesome.min.css',
     config.dir.dist + '/assets/css/main.css'
   ]).pipe(concatCss('bundle.css'))
     .pipe(gulp.dest(config.dir.dist + '/assets/css'));
 });
 
 gulp.task('fonts', function() {
-  return gulp.src(config.dir.lib + '/font-awesome/fonts/**.*')
+  return gulp.src(config.dir.lib + '/font-awesome/fonts/*')
     .pipe(gulp.dest(config.dir.dist +'/assets/fonts'));
 });
 
