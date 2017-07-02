@@ -1,0 +1,20 @@
+{
+  "name": "conductiveedact",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node_modules/.bin/gulp build",
+    "dev": "node_modules/.bin/gulp default",
+    "serve": "node_modules/.bin/gulp serve"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.5.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-server-livereload": "^1.9.2",
+    "opn": "^5.1.0"
+  }
+}
