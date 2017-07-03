@@ -12,7 +12,7 @@ let config = {
   dir : {
     lib : './node_modules',
     src: './src',
-    dist: './dist'
+    dist: './docs'
   }
 }
 
