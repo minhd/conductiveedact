@@ -23,6 +23,14 @@ gulp.task('static-files', () => {
     .pipe(gulp.dest(config.dir.dist));
 });
 
+gulp.task('static-files:watch', () => {
+  gulp.watch(
+    [
+      config.dir.src + '/images/*.*',
+      config.dir.src + '/*.html'
+    ], ['static-files']);
+});
+
 gulp.task('sass', function () {
   return gulp.src(config.dir.src + '/assets/sass/**/*.scss')
     .pipe(sass().on('error', sass.logError))
@@ -93,7 +101,9 @@ gulp.task('webserver', function() {
     }));
 });
 
-gulp.task('watch', ['sass:watch', 'js:watch']);
+gulp.task('watch', ['static-files:watch', 'sass:watch', 'js:watch'], ()  => {
+  return gulp.watch(config.dir.src + 'index.html');
+});
 gulp.task('build', ['fonts', 'sass', 'js', 'static-files', 'concat-styles', 'minify-css']);
 gulp.task('default', ['build', 'webserver', 'watch']);
 gulp.task('serve', ['build', 'webserver']);
