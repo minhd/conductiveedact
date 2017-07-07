@@ -83,7 +83,7 @@ gulp.task('js:watch', () => {
 gulp.task('js', ['js-lib', 'js-ie', 'js-main']);
 
 gulp.task('webserver', function() {
-  gulp.src('dist')
+  gulp.src(config.dir.dist)
     .pipe(server({
       host: 'localhost',
       port: 8001,
